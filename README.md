@@ -1,38 +1,126 @@
-URL ShorteURL Shortener Frontend & Logging Middleware Project
-This repository contains a TypeScript-based frontend application for a URL shortener tool, along with a custom logging middleware implementation.
 
-📁 Folder Structure
-/ ├── Logging Middleware/ │ ├── logger.ts # Custom logging middleware │ ├── logger.test.ts # (Optional) Unit tests for middleware │ └── README.md # Middleware usage instructions │ ├── Frontend Test Submission/ │ ├── public/ │ │ └── index.html │ │ │ ├── src/ │ │ ├── components/ # Form, Result card, and Analytics UI │ │ ├── middleware/ # Imports and uses logger.ts │ │ ├── pages/ # URLShortenerPage.tsx (main page) │ │ ├── utils/ # API & validator logic │ │ ├── App.tsx # App root │ │ ├── index.tsx # ReactDOM render │ │ ├── theme.ts # (Optional) MUI theme │ │ └── styles.css # Fallback CSS │ │ │ ├── .gitignore │ ├── package.json │ ├── tsconfig.json │ └── README.md # Project usage guide
+##  Folder Structure
 
-yaml Copy Edit
+```
 
-🚀 Features
-✅ Custom URL input with optional shortcode and expiry
-✅ Shortened URL preview with copy feature
-✅ Analytics panel showing click logs
-✅ Logging middleware integrated in the frontend (for development/debug)
-🛠 Getting Started
-1. Clone the Repository
-git clone https://github.com/pyarasanikavya/22ve1a0552.git
-cd 22ve1a0552/Frontend Test Submissionner Frontend & Logging Middleware Project
+22ve1a0523/
+├── Logging Middleware/
+│   ├── logger.ts
+│   ├── logger.test.ts  # optional
+│   └── README.md
+│
+└── Frontend Test Submission/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── URLInputForm.tsx
+│   │   ├── URLResultCard.tsx
+│   │   └── AnalyticsPanel.tsx
+│   ├── middleware/
+│   │   └── logger.ts
+│   ├── pages/
+│   │   └── URLShortenerPage.tsx
+│   ├── utils/
+│   │   ├── api.ts
+│   │   └── validators.ts
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── styles.css
+├── package.json
+└── README.md
 
-This repository contains a TypeScript-based frontend application for a URL shortener tool, along with a custom logging middleware implementation.
+````
 
 
 
+## Logging Middleware
 
-✅ Custom URL input with optional shortcode and expiry
+Located in `Logging Middleware/`
 
-✅ Shortened URL preview with copy feature
+###  Purpose
+A reusable `logger.ts` utility to track events like:
 
-✅ Analytics panel showing click logs
+- API call success or failure
+- Form submission
+- Errors and warnings
 
-✅ Logging middleware integrated in the frontend (for development/debug)
 
-🛠 Getting Started
 
-1. Clone the Repository
+### Sample Output (in Dev Console)
 
-git clone https://github.com/pyarasanikavya/22ve1a0552.git
+```json
+{
+  "level": "INFO",
+  "message": "Fetched auth token",
+  "timestamp": "2025-07-18T07:30:00Z",
+  "data": { "token": "xyz" }
+}
+```
 
-cd 22ve1a0552/Frontend Test Submission
+---
+
+## Frontend Test Submission
+
+Located in `Frontend Test Submission/`
+
+###  Features
+
+*  URL Shortener form
+* Form validation (URL format, empty checks)
+* API Integration (`/auth`, `/register`, `/analytics`)
+* Analytics display (clicks, last clicked at, source)
+  * Custom `logger.ts` used across all API & form flows
+* UI built using Material UI
+
+---
+
+## How to Run Locally
+
+```bash
+cd "Frontend Test Submission"
+
+# Install dependencies
+npm install
+
+# Run dev server
+npm start
+```
+
+Then open: [http://localhost:3000](http://localhost:3000)
+
+---
+
+
+
+## Tech Stack
+
+* React + TypeScript
+* Material UI (MUI)
+* Axios
+* Custom logging middleware
+* Form state with `useState`
+
+---
+
+##  Git Setup (if submitting to GitHub)
+
+```bash
+# Navigate to root
+cd 22ve1a0523
+
+# Initialize Git
+git init
+git add .
+git commit -m "Initial commit for frontend test submission"
+git remote add origin https://github.com/<your-username>/22ve1a0523.git
+git push -u origin main
+```
+
+---
+
+
+
+##  Screenshots
+![WhatsApp Image 2025-07-18 at 14 07 12_c0d6ac63](https://github.com/user-attachments/assets/292a9b0b-0268-48ea-8db3-c659af8fb752)
+![WhatsApp Image 2025-07-18 at 14 07 12_9441ffcb](https://github.com/user-attachments/assets/73d6afae-ad53-4f80-96ec-6575248e5574)
+
